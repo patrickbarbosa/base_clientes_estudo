@@ -38,7 +38,7 @@ tb_fato_compras = executar_consulta(conexao,'''
 
 
 conexao = conectar('gold')
-inserir_dados(conexao, 'tb_fato_compras', [f"`{col}` VARCHAR(255)" for col in tb_fato_compras.columns], dados = tb_fato_compras.values.tolist())
+inserir_dados(conexao, 'ssot_compras', [f"`{col}` VARCHAR(255)" for col in tb_fato_compras.columns], dados = tb_fato_compras.values.tolist())
 
 executar_consulta(conexao,'''
     ALTER TABLE tb_fato_compras
