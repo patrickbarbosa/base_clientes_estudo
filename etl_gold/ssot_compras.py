@@ -33,22 +33,11 @@ tb_fato_compras = executar_consulta(conexao,'''
 ''')
 
 
-#        --,CASE WHEN A.status = 'Pendente' THEN ROUND(((valor_dolar) + (DATEDIFF(CURDATE(),data_vencimento)) * 0.25),2) ELSE 0 END AS A
-
-
 
 conexao = conectar('gold')
 inserir_dados(conexao, 'ssot_compras', [f"`{col}` VARCHAR(255)" for col in tb_fato_compras.columns], dados = tb_fato_compras.values.tolist())
 
 executar_consulta(conexao,'''
-    ALTER TABLE tb_fato_compras
+    ALTER TABLE ssot_compras
     MODIFY COLUMN valor_dolar FLOAT,
     MODIFY COLUMN valor_total_dolar FLOAT ''')
-
-# /*
-# tb_fato_compras_pendentes('''
-#     WITH compras_pendentes
-# '''
-# )
-
-# */

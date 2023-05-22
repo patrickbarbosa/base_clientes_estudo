@@ -8,7 +8,7 @@ from fn_dt import converter_datas
 
 #Conexão
 conexao = conectar('bronze')
-clientes = executar_consulta(conexao, 'SELECT id, name, pais, "data nascimento", import_date FROM raw_clientes')
+clientes = executar_consulta(conexao, 'SELECT * FROM raw_clientes')
 
 
 
