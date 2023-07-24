@@ -6,7 +6,7 @@ import json
 
 
 conexao = conectar('gold')
-df = executar_consulta(conexao,"SELECT * FROM tb_fato_compras")
+df = executar_consulta(conexao,"SELECT * FROM ssot_compras")
 
 
 # Agrupar os dados por cliente e concatenar as categorias separadas por vírgula
